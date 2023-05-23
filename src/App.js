@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import FoodTileContainer from './components/FoodTypeTile/FoodTileContainer.js'
+import ItemTileContainer from './components/ItemTiles/ItemTileContainer';
+import SingleItem from './components/ItemTiles/SingleItem';
+import UpperNavBar from './components/NavBar/UpperNavBar';
+import RecentOrderContainer from './components/RecentOrders/RecentOrderContainer'
+import Cartitem from './components/Cart/Cartitem';
+
+import PriceViewerContainer from './components/Cart/Price/PriceViewerContainer';
+import CartItemContainer from './components/Cart/CartItemContainer';
+import DashboardContainer from './components/Dashboard/DashboardContainer'
+import CustomerDetailsContainer from './components/Customer/CustomerDetailsContainer';
+import CustomerDisplay from './components/Customer/CustomerDisplay';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       < UpperNavBar />
+       <CustomerDetailsContainer />
+       <CustomerDisplay />
+       <DashboardContainer />
+       <div className="center">
+       <RecentOrderContainer /> 
+       <div className="innerCenter">
+       <FoodTileContainer />
+       <PriceViewerContainer />
+       <ItemTileContainer />   
+       </div>
+       </div>    
+       <CartItemContainer />
+       
     </div>
   );
 }
